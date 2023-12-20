@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+// import and use stylex to style the components
+import { stylex } from "stylex";
 
 function Todo() {
+ 
+  // using stylex to style the components
+  const styles = stylex.create({
+    header: {
+      color: "white",
+      backgroundColor: "black",
+      padding: "10px",
+      textAlign: "center",
+      fontSize: "30px",
+    },
+  });
   const [todos, setTodos] = useState([]);
 
   //function to add items once user click add button
@@ -38,7 +51,11 @@ function Todo() {
   };
 
   return (
-    <div>
+
+    <div >
+      //we will use stylex to style the components
+      <h1 className={stylex(styles.header)}>Add your Plan for Today?</h1>
+
       <h1 className="header">Add your Plan for Today?</h1>
 
       {/*once we display header to the webpage 
